@@ -3,22 +3,11 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 axios.defaults.baseURL = "https://connections-api.goit.global/";
 
-// Utility to add JWT
-const setAuthHeader = (token) => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-};
-
-// Utility to remove JWT
-const clearAuthHeader = () => {
-  axios.defaults.headers.common.Authorization = "";
-};
-
 export const fetchContacts = createAsyncThunk(
   "contacts/fetchAll",
   async (_, thunkAPI) => {
     try {
       const response = await axios.get("/contacts");
-      console.log(response.data);
 
       return response.data;
     } catch (e) {

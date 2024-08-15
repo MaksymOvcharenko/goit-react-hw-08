@@ -1,11 +1,3 @@
-// export const store = configureStore({
-//   reducer: {
-//     contact: contactReducer,
-//     filter: filterReducer,
-//   },
-// });
-///////////
-
 import { configureStore } from "@reduxjs/toolkit";
 import {
   FLUSH,
@@ -22,7 +14,6 @@ import { contactReducer } from "./contacts/slice";
 import { filterReducer } from "./filters/slice";
 import { authReducer } from "./auth/slice";
 
-// export let store = persistStore(store);
 const authPersistConfig = {
   key: "auth",
   storage,
@@ -41,7 +32,7 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-  devTools: process.env.NODE_ENV === "development",
+  // devTools: process.env.NODE_ENV === "development",
 });
 
 export const persistor = persistStore(store);

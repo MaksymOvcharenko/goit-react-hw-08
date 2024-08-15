@@ -14,9 +14,11 @@ const ContactsPage = () => {
 
   return (
     <>
-      <ContactForm />
-      <SearchBox />
-      <ContactList />
+      <div className={s.bg}>
+        <ContactForm />
+        <SearchBox />
+        <ContactList />
+      </div>
     </>
   );
 };

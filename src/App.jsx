@@ -1,7 +1,5 @@
 import "./App.css";
-import ContactForm from "./components/ContactForm/ContactForm";
-import SearchBox from "./components/SearchBox/SearchBox";
-import ContactList from "./components/ContactList/ContactList";
+
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
@@ -13,18 +11,11 @@ import { PrivateRoute } from "./PrivateRoute";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import ContactsPage from "./pages/ContactsPage/ContactsPage";
-import { selectError, selectIsLoading } from "./redux/contacts/selectors";
-import { fetchContacts } from "./redux/contacts/operations";
+
 import { refreshUser } from "./redux/auth/operations";
 import { selectIsRefreshing } from "./redux/auth/selectors";
 
 function App() {
-  // const dispatch = useDispatch();
-  // const isLoading = useSelector(selectIsLoading);
-  // const error = useSelector(selectError);
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
   const dispatch = useDispatch();
   const { isRefreshing } = useSelector(selectIsRefreshing);
 
